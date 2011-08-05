@@ -1,0 +1,3 @@
+= bandit - A multi-armed bandit optmization framework for Rails
+
+TODO: Write library.
