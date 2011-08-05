@@ -1,13 +1,13 @@
 require "bandit/version"
 require "bandit/exceptions"
-require "bandit/experiments"
 require "bandit/metric"
-require "bandit/pit_boss"
+require "bandit/config"
+require "bandit/experiment"
 require "bandit/players/base"
 require "bandit/players/round_robin"
 require "bandit/storage/base"
 require "bandit/storage/memory"
-require "bandit/config"
+
 
 module Bandit
   def self.config
