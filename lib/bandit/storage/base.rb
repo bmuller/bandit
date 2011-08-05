@@ -1,3 +1,14 @@
+# store total count for this alternative
+# <experiment>:<alternative>:conversions = count
+# <experiment>:<alternative>:participants = count
+
+# store total count for this alternative per day and hour
+# <experiment>:<alternative>:conversions:<date>:<hour> = count
+# <experiment>:<alternative>:participants:<date>:<hour> = count
+
+# every so often store current epsilon
+# <experiment>:epsilon = 0.1
+
 module Bandit
   class BaseStorage
     def self.get_storage(name, config)
