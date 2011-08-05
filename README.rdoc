@@ -9,6 +9,7 @@ First, add the following to your Gemfile in your Rails 3 app:
 
 Then, run the following:
 
+    bundle install
     rails generate bandit:install
 
 You can then edit the bandit.yml file in your config directory.
