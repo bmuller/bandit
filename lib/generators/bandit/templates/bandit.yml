@@ -1,0 +1,16 @@
+development: 
+  player: round_robin
+  storage: memory
+
+test: 
+  player: round_robin
+  storage: memory
+
+production: 
+  player: epsilon_greedy
+  player_config:
+    epsilon: 0.8
+  storage: redis
+  storage_config:
+    host: localhost
+    port: 6379

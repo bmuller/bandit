@@ -1,3 +1,18 @@
 = bandit - A multi-armed bandit optmization framework for Rails
 
 TODO: Write library.
+
+= Storage:
+# store total count for this alternative
+<experiment>:<alternative>:conversions = count
+<experiment>:<alternative>:participants = count
+
+# store total count for this alternative per day and hour
+<experiment>:<alternative>:conversions:<date>:<hour> = count
+<experiment>:<alternative>:participants:<date>:<hour> = count
+
+# every so often store current epsilon
+<experiment>:epsilon = 0.1
+
+= Reference
+http://untyped.com/untyping/2011/02/11/stop-ab-testing-and-make-out-like-a-bandit/

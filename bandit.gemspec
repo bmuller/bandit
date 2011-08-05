@@ -1,4 +1,3 @@
-# -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
 require "bandit/version"
 
@@ -7,7 +6,7 @@ Gem::Specification.new do |s|
   s.version     = Bandit::VERSION
   s.authors     = ["Brian Muller"]
   s.email       = ["brian.muller@livingsocial.com"]
-  s.homepage    = ""
+  s.homepage    = "https://github.com/bmuller/bandit"
   s.summary     = "Multi-armed bandit testing in rails"
   s.description = "Bandit provides a way to do multi-armed bandit optimization of alternatives in a rails website"
 

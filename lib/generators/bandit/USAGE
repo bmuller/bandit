@@ -1,0 +1,3 @@
+To copy bandit config and initilizer:
+
+    rails generate bandit:install
