@@ -3,10 +3,10 @@ Bandit.setup do |config|
   yml = YAML.load_file("#{Rails.root}/config/bandit.yml")[Rails.env]
 
   config.player = yml['player']
-
-  config.player_config = yml['player_config'] || nil
+  config.player_config = yml['player_config']
   
   config.storage = yml['storage']
+  config.storage = yml['storage_config']
 end
 
 # Create your metrics here
