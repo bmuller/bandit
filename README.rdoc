@@ -55,7 +55,9 @@ Then, add the following to your config/routes.rb file:
 
     match 'bandit' => 'bandit#index'
 
-You can then go to "http://<yourhost>/bandit" to see a dashboard with relevant information.
+To see a dashboard with relevant information, go to:
+
+    http://<yourhost>/bandit
 
 = Reference
 http://untyped.com/untyping/2011/02/11/stop-ab-testing-and-make-out-like-a-bandit
