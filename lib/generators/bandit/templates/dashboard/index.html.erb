@@ -1,0 +1,13 @@
+<h1>Bandit</h1>
+<% @experiments.each { |experiment| %>
+
+  <h2><%= experiment.name %></h2>
+  <% experiment.alternatives.each { |alt| %>
+    <h3>Alternative: <%= alt %></h3>
+    <ul>
+      <li>Participants: <%= experiment.participant_count(alt) %></li>
+      <li>Conversions: <%= experiment.conversion_count(alt) %></li>
+      <li>Conversion rate: <%= experiment.conversion_rate(alt) %> %</li>
+    </ul>
+  <% } %>
+<% } %>

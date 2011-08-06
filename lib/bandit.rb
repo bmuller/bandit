@@ -35,6 +35,10 @@ module Bandit
     exp = Experiment.instances.select { |e| e.name == name } 
     exp.length > 0 ? exp.first : nil
   end
+
+  def self.experiments
+    Experiment.instances
+  end
 end
 
 require 'action_controller'

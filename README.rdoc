@@ -42,6 +42,14 @@ To track a converstion in your controller:
 
    bandit_convert! :click_test
 
+= Dashboard
+
+    rails generate bandit:dashboard
+
+Then, add the following to your config/routes.rb file:
+
+    match 'bandit' => 'bandit#index'
+
 
 = Reference
 http://untyped.com/untyping/2011/02/11/stop-ab-testing-and-make-out-like-a-bandit
