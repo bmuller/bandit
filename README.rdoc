@@ -12,7 +12,35 @@ Then, run the following:
     bundle install
     rails generate bandit:install
 
-You can then edit the bandit.yml file in your config directory.
+You can then edit the bandit.yml file in your config directory to set your storage and player parameters.
+
+== Configuration
+To set up an experiment, add it either somewhere in your code or in the bandit initializer.  Creating an experiment is simple:
+
+    Bandit::Experiment.create(:click_test) { |exp|
+      exp.alternatives = [ 20, 30, 40 ]
+      exp.metric = Bandit::Metric.create(:clicks, "A count of clicks on the purchase page.")
+      exp.title = "Click Test"
+      exp.description = "A test of clicks on purchase page with varying link sizes."
+    }
+
+Metrics can be reused among experiments.
+
+
+== View
+To get an alternative (per viewer, based on cookies):
+
+    <%= bandit_choose :click_test %>
+
+For instance, in a link:
+
+    <%= link_to "new purchase", new_purchase_path, :style => "font-size: #{bandit_choose(:click_test)}px;" %>
+
+
+== Controller
+To track a converstion in your controller:
+
+   bandit_convert! :click_test
 
 
 = Reference

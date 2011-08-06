@@ -4,4 +4,7 @@ module Bandit
 
   class UnknownPlayerEngineError < RuntimeError
   end
+
+  class MissingConfigurationError < ArgumentError
+  end
 end

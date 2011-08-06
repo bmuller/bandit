@@ -9,8 +9,12 @@ module Bandit
       end
 
     end
+
+    def initialize(config)
+      @config = config
+    end
     
-    def choose_alternattive(experiment)
+    def choose_alternative(experiment)
       # return the alternative that should be chosen
       raise NotImplementedError
     end

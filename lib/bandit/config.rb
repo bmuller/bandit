@@ -1,9 +1,6 @@
 module Bandit
 
   class Config
-
-    class MissingConfigurationError < ArgumentError; end
-
     def self.required_fields
       [:storage, :player]
     end

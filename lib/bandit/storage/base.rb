@@ -36,11 +36,11 @@ module Bandit
       raise NotImplementedError
     end
     
-    def epsilon
+    def player_state_set(player, name, value)
       raise NotImplementedError      
     end
 
-    def epsilon=(value)
+    def player_state_get(player, name)
       raise NotImplementedError
     end
   end

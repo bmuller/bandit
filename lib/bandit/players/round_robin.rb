@@ -1,6 +1,6 @@
 module Bandit
-  class RoundRobinPlayer
-    def choose_alternattive(experiment)
+  class RoundRobinPlayer < BasePlayer
+    def choose_alternative(experiment)
       experiment.alternatives.choice
     end
   end

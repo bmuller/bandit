@@ -6,15 +6,14 @@ Bandit.setup do |config|
   config.player_config = yml['player_config']
   
   config.storage = yml['storage']
-  config.storage = yml['storage_config']
+  config.storage_config = yml['storage_config']
 end
 
-# Create your metrics here
-# m = Metric.new :name => 'clicks', :description => 'number of people who clicked'
+# Create your experiments here - like this:
+Bandit::Experiment.create(:click_test) { |exp|
+  exp.alternatives = [ 20, 30, 40 ]
+  exp.metric = Bandit::Metric.create(:clicks, "A count of clicks on the purchase page.")
+  exp.title = "Click Test"
+  exp.description = "A test of clicks on purchase page with varying link sizes."
+}
 
-# Create your experiments here
-# e = Experiment.new :title => 'awesome experiment', :description => 'test button sizes'
-# e.alternatives = [ 20, 30, 40 ]
-# e.metric = m
-
-# That's all!

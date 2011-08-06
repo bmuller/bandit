@@ -3,7 +3,7 @@ module Bandit
     def initialize(config)
       @participants = {}
       @conversions = {}
-      @epsilon = config['epsilon']
+      @player_state = {}
     end
 
     def incr_participants(experiment, alternative, count=1)
@@ -26,12 +26,14 @@ module Bandit
       @conversions.fetch(key, 0)
     end
     
-    def epsilon
-      @epsilon
+    def player_state_set(player, name, value)
+      key = [player.name, name].join(":")
+      @player_state[key] = value
     end
 
-    def epsilon=(value)
-      @epsilon = value
+    def player_state_get(player, name)
+      key = [player.name, name].join(":")
+      @player_state.fetch(key, nil)
     end
   end
 end
