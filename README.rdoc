@@ -1,6 +1,6 @@
-= bandit - A multi-armed bandit optmization framework for Rails
+= bandit
 
-TODO: Write library.
+Bandit is a multi-armed bandit optmization framework for Rails.
 
 = Installation
 First, add the following to your Gemfile in your Rails 3 app:
@@ -36,6 +36,11 @@ For instance, in a link:
 
     <%= link_to "new purchase", new_purchase_path, :style => "font-size: #{bandit_choose(:click_test)}px;" %>
 
+You can force a particular alternative by adding a query parameter named "bandit_<expname>" and setting it's value to the alternative you want.  For instance, given the above experiment in the configuration example:
+
+    http://<yourhost>/<path>?bandit_click_test=40
+
+will then force the alternative to be "40".
 
 == Controller
 To track a converstion in your controller:
@@ -50,6 +55,7 @@ Then, add the following to your config/routes.rb file:
 
     match 'bandit' => 'bandit#index'
 
+You can then go to "http://<yourhost>/bandit" to see a dashboard with relevant information.
 
 = Reference
 http://untyped.com/untyping/2011/02/11/stop-ab-testing-and-make-out-like-a-bandit
