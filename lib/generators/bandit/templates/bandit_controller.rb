@@ -1,5 +1,5 @@
 class BanditController < ApplicationController                                                                                                                                                   
-  layout :bandit
+  layout 'bandit'
 
   def index
     @experiments = Bandit.experiments

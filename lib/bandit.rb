@@ -13,6 +13,7 @@ require "bandit/storage/memory"
 
 require "bandit/extensions/controller_concerns"
 require "bandit/extensions/view_concerns"
+require "bandit/extensions/time"
 
 module Bandit
   def self.config

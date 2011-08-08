@@ -50,7 +50,8 @@ module Bandit
     end
 
     def alternative_start_time(experiment, alternative)
-      @alternative_starts[alt_started_key(experiment, alternative)]
+      secs = @alternative_starts[alt_started_key(experiment, alternative)]
+      secs.nil? ? nil : Time.at(secs).to_date_hour
     end
   end
 end

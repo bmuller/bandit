@@ -5,7 +5,7 @@ module StorageTestBase
     exp = new_experiment
     alt = exp.alternatives.first
 
-    start = Time.now.to_i
+    start = Bandit::DateHour.now
     @storage.incr_participants(exp, alt)
     assert_equal @storage.participant_count(exp, alt), 1
     @storage.incr_participants(exp, alt, 2)

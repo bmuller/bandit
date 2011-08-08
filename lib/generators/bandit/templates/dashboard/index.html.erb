@@ -9,5 +9,15 @@
       <li>Conversions: <%= experiment.conversion_count(alt) %></li>
       <li>Conversion rate: <%= experiment.conversion_rate(alt) %> %</li>
     </ul>
+    Conversions per hour:
+    <ul>
+      <% if experiment.alternative_start(alt).nil? %>
+      None so far...
+      <% else %>
+        <% experiment.alternative_start(alt).upto(Bandit::DateHour.now) { |dh| %>
+        <li><%= dh %>: <%= experiment.participant_count(alt, dh) %> participants, <%= experiment.conversion_count(alt, dh) %> conversions</li>
+        <% } %>
+      <% end %>
+    </ul>
   <% } %>
 <% } %>

@@ -42,18 +42,22 @@ module Bandit
       }
     end
 
-    def conversion_count(alt)
-      @storage.conversion_count(self, alt)
+    def conversion_count(alt, date_hour=nil)
+      @storage.conversion_count(self, alt, date_hour)
     end
 
-    def participant_count(alt)
-      @storage.participant_count(self, alt)
+    def participant_count(alt, date_hour=nil)
+      @storage.participant_count(self, alt, date_hour)
     end
 
     def conversion_rate(alt)
       pcount = participant_count(alt)
       ccount = conversion_count(alt)
       (pcount == 0 or ccount == 0) ? 0 :  (ccount.to_f / pcount.to_f * 100.0)
+    end
+
+    def alternative_start(alt)
+      @storage.alternative_start_time(self, alt)
     end
   end
 end
