@@ -59,5 +59,10 @@ To see a dashboard with relevant information, go to:
 
     http://<yourhost>/bandit
 
+= Tests
+To run tests:
+
+    bundle exec rake test
+
 = Reference
 http://untyped.com/untyping/2011/02/11/stop-ab-testing-and-make-out-like-a-bandit

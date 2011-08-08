@@ -11,6 +11,7 @@ module Bandit
       
       def copy_view
         copy_file 'dashboard/index.html.erb', 'app/views/bandit/index.html.erb'
+        copy_file 'dashboard/bandit.html.erb', 'app/views/layouts/bandit.html.erb'
       end
 
       def message

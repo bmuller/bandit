@@ -3,6 +3,7 @@ require "bandit/exceptions"
 require "bandit/metric"
 require "bandit/config"
 require "bandit/experiment"
+require "bandit/date_hour"
 
 require "bandit/players/base"
 require "bandit/players/round_robin"

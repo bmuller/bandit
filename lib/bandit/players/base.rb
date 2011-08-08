@@ -12,11 +12,26 @@ module Bandit
 
     def initialize(config)
       @config = config
+      @storage = Bandit.storage
     end
     
     def choose_alternative(experiment)
       # return the alternative that should be chosen
       raise NotImplementedError
+    end
+
+    # store state variable by name
+    def set(name, value)
+      @storage.player_state_set(self, name, value)
+    end
+
+    # get state variable by name
+    def get(name)
+      @storage.player_state_get(self, name)
+    end
+
+    def name
+      self.class.to_s
     end
   end
 end
