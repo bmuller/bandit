@@ -1,6 +1,5 @@
 require "bandit/version"
 require "bandit/exceptions"
-require "bandit/metric"
 require "bandit/config"
 require "bandit/experiment"
 require "bandit/date_hour"

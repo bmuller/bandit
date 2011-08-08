@@ -1,6 +1,6 @@
 module Bandit
   class Experiment
-    attr_accessor :name, :title, :description, :metric, :alternatives
+    attr_accessor :name, :title, :description, :alternatives
     @@instances = []
 
     def self.create(name)
@@ -35,7 +35,7 @@ module Bandit
     end
 
     def validate!
-      [:metric, :alternatives].each { |field|        
+      [:title, :alternatives].each { |field|        
         unless send(field)
           raise MissingConfigurationError, "#{field} must be set in experiment #{name}"
         end

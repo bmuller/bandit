@@ -10,10 +10,9 @@ Bandit.setup do |config|
 end
 
 # Create your experiments here - like this:
-Bandit::Experiment.create(:click_test) { |exp|
-  exp.alternatives = [ 20, 30, 40 ]
-  exp.metric = Bandit::Metric.create(:clicks, "A count of clicks on the purchase page.")
-  exp.title = "Click Test"
-  exp.description = "A test of clicks on purchase page with varying link sizes."
-}
+# Bandit::Experiment.create(:click_test) { |exp|
+#   exp.alternatives = [ 20, 30, 40 ]
+#   exp.title = "Click Test"
+#   exp.description = "A test of clicks on purchase page with varying link sizes."
+# }
 
