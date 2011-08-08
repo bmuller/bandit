@@ -19,12 +19,9 @@ To set up an experiment, add it either somewhere in your code or in the bandit i
 
     Bandit::Experiment.create(:click_test) { |exp|
       exp.alternatives = [ 20, 30, 40 ]
-      exp.metric = Bandit::Metric.create(:clicks, "A count of clicks on the purchase page.")
       exp.title = "Click Test"
       exp.description = "A test of clicks on purchase page with varying link sizes."
     }
-
-Metrics can be reused among experiments.
 
 
 == View

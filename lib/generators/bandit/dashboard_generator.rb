@@ -14,6 +14,11 @@ module Bandit
         copy_file 'dashboard/bandit.html.erb', 'app/views/layouts/bandit.html.erb'
       end
 
+      def copy_assets
+        directory 'dashboard/js', 'public/javascripts/bandit'
+        directory 'dashboard/css', 'public/css/bandit'
+      end
+
       def message
         say "\n\tNow, add the following to your config/routes.rb file:"
         say "\t\tmatch 'bandit' => 'bandit#index'\n\n"
