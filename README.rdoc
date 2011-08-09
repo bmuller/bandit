@@ -59,7 +59,7 @@ To see a dashboard with relevant information, go to:
 = Tests
 To run tests:
 
-    bundle exec rake test
+    rake test
 
 = Reference
 http://untyped.com/untyping/2011/02/11/stop-ab-testing-and-make-out-like-a-bandit

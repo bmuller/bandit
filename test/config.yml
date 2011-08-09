@@ -1,3 +1,7 @@
 redis_storage_config:
   host: localhost
   port: 6379
+
+memcache_storage_config:
+  host: localhost
+  

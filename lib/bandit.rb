@@ -9,10 +9,13 @@ require "bandit/players/round_robin"
 
 require "bandit/storage/base"
 require "bandit/storage/memory"
+require "bandit/storage/memcache"
+require "bandit/storage/redis"
 
 require "bandit/extensions/controller_concerns"
 require "bandit/extensions/view_concerns"
 require "bandit/extensions/time"
+require "bandit/extensions/string"
 
 module Bandit
   def self.config
@@ -22,6 +25,8 @@ module Bandit
   def self.setup(&block)
     yield config
     config.check!
+    # intern keys in storage config
+    config.storage_config = config.storage_config.inject({}) { |n,o| n[o.first.intern] = o.last; n }
   end  
 
   def self.storage

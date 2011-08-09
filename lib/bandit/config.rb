@@ -17,6 +17,11 @@ module Bandit
     # player_config should be hash of player config values
     attr_accessor :player_config
 
+    def initialize
+      @storage_config = {}
+      @player_config = {}
+    end
+
     def check!
       self.class.required_fields.each do |required_field|
         unless send(required_field)

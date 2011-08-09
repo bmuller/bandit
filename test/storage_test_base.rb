@@ -1,6 +1,10 @@
 require 'date'
 
 module StorageTestBase
+  def teardown
+    @storage.clear!
+  end
+
   def test_participant_storage
     exp = new_experiment
     alt = exp.alternatives.first
@@ -40,10 +44,11 @@ module StorageTestBase
 
   def test_player_storage
     player = Bandit.player
+    exp = new_experiment
 
-    @storage.player_state_set(player, "something", "123")
-    assert_equal @storage.player_state_get(player, "something"), "123"
+    @storage.player_state_set(exp, player, "something", 123)
+    assert_equal @storage.player_state_get(exp, player, "something"), 123
     
-    assert_equal @storage.player_state_get(player, "nonexistant"), nil
+    assert_equal @storage.player_state_get(exp, player, "nonexistant"), nil
   end
 end
