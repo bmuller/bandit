@@ -1,4 +1,8 @@
 <section class='span-20 colborder'>
+  <div class='title'><h1>Status</h1></div>
+  <p>
+    Using <%= storage_name %> storage <%= storage_config %> and a <%= player_name %> player <%= player_config %> for <%= Bandit.experiments.length %> active experiment(s).
+  </p>
   <div class='title'><h1>Running Experiments</h1></div>
   <% @experiments.each { |experiment| %>
   <h2><%= link_to experiment.name.to_s.titleize, url_for(:action => 'show', :id => experiment.name) %></h2>

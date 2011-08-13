@@ -12,6 +12,7 @@ module Bandit
       def copy_view
         directory 'dashboard/view', 'app/views/bandit'
         copy_file 'dashboard/bandit.html.erb', 'app/views/layouts/bandit.html.erb'
+        directory 'dashboard/helpers', 'app/helpers'
       end
 
       def copy_assets

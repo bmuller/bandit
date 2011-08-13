@@ -53,7 +53,7 @@ module Bandit
     def conversion_rate(alt)
       pcount = participant_count(alt)
       ccount = conversion_count(alt)
-      (pcount == 0 or ccount == 0) ? 0 :  (ccount.to_f / pcount.to_f * 100.0)
+      (pcount == 0 or ccount == 0) ? 0 : (ccount.to_f / pcount.to_f * 100.0)
     end
 
     def alternative_start(alt)

@@ -3,9 +3,11 @@ require "bandit/exceptions"
 require "bandit/config"
 require "bandit/experiment"
 require "bandit/date_hour"
+require "bandit/memoizable"
 
 require "bandit/players/base"
 require "bandit/players/round_robin"
+require "bandit/players/epsilon_greedy"
 
 require "bandit/storage/base"
 require "bandit/storage/memory"

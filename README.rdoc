@@ -12,7 +12,9 @@ Then, run the following:
     bundle install
     rails generate bandit:install
 
-You can then edit the bandit.yml file in your config directory to set your storage and player parameters.
+You can then edit the bandit.yml file in your config directory to set your storage and player parameters.  Redis, memcache, and memory storage options are available.  Memory storage should only be used for testing.
+
+See the file players.rdoc for information about available players.
 
 == Configuration
 To set up an experiment, add it either somewhere in your code or in the bandit initializer.  Creating an experiment is simple:
@@ -60,6 +62,10 @@ To see a dashboard with relevant information, go to:
 To run tests:
 
     rake test
+
+To produce fake data for the past week, first create an experiment definition.  Then, run the following rake task:
+
+    rake bandit:populate_data[experiment_name]
 
 = Reference
 http://untyped.com/untyping/2011/02/11/stop-ab-testing-and-make-out-like-a-bandit

@@ -1,15 +1,15 @@
 development: 
   player: round_robin
-  storage: memory
+  storage: memcache
 
 test: 
   player: round_robin
-  storage: memory
+  storage: memcache
 
 production: 
   player: epsilon_greedy
   player_config:
-    epsilon: 0.8
+    epsilon: 0.1
   storage: redis
   storage_config:
     host: localhost

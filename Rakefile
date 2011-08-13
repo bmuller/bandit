@@ -7,6 +7,7 @@ Rake::RDocTask.new("doc") { |rdoc|
   rdoc.title = "bandit - A multi-armed bandit optmization framework for Rails"
   rdoc.rdoc_dir = 'docs'
   rdoc.rdoc_files.include('README.rdoc')
+  rdoc.rdoc_files.include('players.rdoc')
   rdoc.rdoc_files.include('lib/**/*.rb')
 }
 
