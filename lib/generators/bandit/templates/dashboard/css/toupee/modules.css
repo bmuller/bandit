@@ -1,0 +1,30 @@
+/* GENERIC MODULE STYLES
+============================= */
+section.mod                                 { margin-bottom: 20px; }
+section.mod header                          { position: relative; margin: 0; padding: 0; }
+section.mod header h2                       { margin-bottom: 5px; border-bottom: 1px solid #e1e1e1; position: relative; }
+section.mod header h2 a                     { border: none; }
+section.mod header h2 .secondary            { position: absolute; right: 0; bottom: 7px; font-size: 12px; }
+section.mod article                         { position: relative; margin: 0; padding: 0; }
+section.mod article ul                      { list-style: none; margin: 0 0 10px; padding: 0; }
+section.mod article ul li                   { position: relative; border-bottom: 1px solid #f1f1f1; padding: 5px 0; }
+section.mod article ul li img               { float: left; margin-top: 6px; margin-left: 4px;}
+section.mod footer                          { border: none; margin: 0; padding: 0; }
+
+/* PLACES A BOX AROUND MODULE CONTENT */
+.box {
+	background: rgba(0, 0, 0, .03);
+	border-radius: 3px; 
+	-webkit-border-radius: 3px; 
+	-moz-border-radius: 3px;
+	boder-radius: 3px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+}
+
+.mod.box header, 
+.mod.box article, 
+.mod.box footer { padding: 0 10px; } 

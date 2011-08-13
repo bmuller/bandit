@@ -22,6 +22,14 @@ module Bandit
       end
     end
 
+    # given a block that is called w/ each DateHour for a day, inject over all DateHours
+    def self.date_inject(date, initial=0)
+      DateHour.new(date, 0).upto(DateHour.new(date, 23)) { |dh|
+        initial = yield initial, dh
+      }
+      initial
+    end
+
     def +(hours)
       (to_time + (hours * 3600)).to_date_hour
     end
@@ -31,27 +39,43 @@ module Bandit
     end
 
     def <(other)
-      @date < other.date and @hour < other.hour
+      @date < other.date or (@date == other.date and @hour < other.hour)
     end
 
     def >(other)
-      @date > other.date and @hour > other.hour
+      @date > other.date or (@date == other.date and @hour > other.hour)
     end
 
     def >=(other)
-      @date >= other.date and @hour >= other.hour
+      self > other or self == other
     end
 
     def <=(other)
-      @date <= other.date and @hour <= other.hour
+      self < other or self == other
     end
 
     def to_time
-      Time.mktime(@date.year, @date.month, @date.day, @hour, 0)
+      Time.mktime year, month, day, hour, 0
     end
 
     def to_s
       "#{@date.to_s} #{@hour}:00:00"
+    end
+
+    def to_i
+      to_time.to_i
+    end
+
+    def year
+      @date.year
+    end
+
+    def month
+      @date.month
+    end
+
+    def day
+      @date.day
     end
   end
 

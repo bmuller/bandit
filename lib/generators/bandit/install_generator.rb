@@ -12,6 +12,10 @@ module Bandit
       def copy_config
         copy_file 'bandit.yml', 'config/bandit.yml'
       end
+
+      def copy_rakefile
+        copy_file 'bandit.rake', 'lib/tasks/bandit.rake'
+      end
     end
 
   end

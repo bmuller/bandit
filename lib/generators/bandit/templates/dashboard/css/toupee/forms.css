@@ -1,0 +1,89 @@
+/* BASIC FORM STRUCTURE
+======================== */
+form ul                 { margin: 0; padding: 0; list-style: none; }
+form ul li              { margin: 0; padding: 10px 0; min-height: 30px; border-bottom: 1px double #f1f1f1; }
+form ul li.last         { border: none; }
+form label              { margin: 6px 20px 2px 0; display: block; font-size: 1em; line-height: 1.5em; font-weight: bold; }
+form label span         { margin-right: 10px; font-size: .8em; font-weight: normal; color: #777; }
+form label.remember     { display: inline; font-size: 1.2em; font-weight: normal; }
+form fieldset           { margin-bottom: 20px; border-top: 1px solid #e1e1e1;}
+form fieldset legend    { padding: 0 10px 0 0; font-size: 16px; background-color: #fff;}
+
+/* DISPLAYING A FORM INLINE */
+form .inline label                      { float: left; }
+form .inline.center	label               { width: 150px; text-align: right; }
+form .inline.center li.submit .button   { margin-left: 170px; }
+
+/* FORM MESSAGING */
+form p.message                          { margin: 5px 0 0 174px; font-size: .8em; line-height: 1.5em; }
+form p.message strong                   { font-weight: bold; color: #666; }
+
+/* INPUT TEXT
+======================== */
+form fieldset input.text { 
+	width: 215px; 
+	padding: 5px 8px; 
+	border-top: 1px solid #e1e1e1; 
+	border-left: none; 
+	border-bottom: 1px solid #fff; 
+	border-right: 1px solid #fff; 
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
+	font-size: 1.4em; 
+	color: #333; 
+	background-color: #f1f1f1; 
+	-webkit-border-radius: 6px; -moz-border-radius: 6px; border-radius: 6px; 
+}
+
+/* INPUT TYPE FILE
+======================== */
+form fieldset input.file	{ padding: 5px 8px; border: 1px solid #e1e1e1; background-color: #f1f1f1; }	
+label.file-label 			{ width: 79px; height: 22px; background: url("/images/btn-choose-file.gif") 0 0 no-repeat; display: block; overflow: hidden; cursor: pointer; }
+label.file-label input.file	{ position: relative; height: 100%; width: auto; opacity: 0; -moz-opacity: 0; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0); }
+
+/* TEXTAREA
+======================== */
+	
+form fieldset textarea 				{ width: 400px; height: 100px; padding: 5px; border-top: 1px solid #c3c3c3; border-left: none; border-bottom: 1px solid #fff; border-right: 1px solid #fff; background-color: #f1f1f1;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1.2em; color: #333;  
+	-webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; }
+
+
+/* SELECT BOX
+======================== */
+form select                         { padding: 2px 0 2px 4px; border: 1px solid #e1e1e1; background-color: #f1f1f1;  min-width: 230px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1.4em; color: #333; 
+	-moz-border-radius-topleft: 5px; -webkit-border-top-left-radius: 5px; -moz-border-radius-bottomleft: 5px; -webkit-border-bottom-left-radius: 5px; }
+
+form .inline.date select            { min-width: inherit; }
+
+/* FORM FOCUS STYLES
+======================== */
+form fieldset input.text:focus,
+form fieldset textarea:focus 		{ border-top-color: #ddd; background: #d0eeff; outline-width: 0; }
+
+/* SEARCH FORM
+======================== */
+.mod ul li.searchform           { padding: 5px 5px 3px 5px; }
+.mod.search form fieldset				{ border: none; }
+
+.searchform {
+	display: inline-block; 
+	zoom: 1; /* ie7 hack for display:inline-block */
+	*display: inline;
+	border: solid 1px #d2d2d2;
+	padding: 5px;
+	
+	-webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;
+	-webkit-box-shadow: 0 1px 0px rgba(0,0,0,.1); -moz-box-shadow: 0 1px 0px rgba(0,0,0,.1); box-shadow: 0 1px 0px rgba(0,0,0,.1);
+
+	background: #f1f1f1;
+	background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ededed));
+	background: -moz-linear-gradient(top,  #fff,  #ededed);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed'); /* ie7 */
+	-ms-filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed'); /* ie8 */
+}
+
+.searchform .searchfield           { background: #fff; padding: 8px; width: 470px; border: solid 1px #bcbbbb; outline: none;
+	-webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;
+	-moz-box-shadow: inset 0 1px 2px rgba(0,0,0,.2); -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.2); box-shadow: inset 0 1px 2px rgba(0,0,0,.2);
+}

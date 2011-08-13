@@ -8,12 +8,12 @@ module Bandit
 
     # increment key by count
     def incr(key, count=1)
-      # memcache incr is broken in memcache-client gem
+      # memcache incr seems to be broken in memcache-client gem
       set(key, get(key, 0) + count)
     end
 
     # initialize key if not set
-    def init(key, value)
+    def init(key, value)      
       @memcache.add(key, value)
     end
 

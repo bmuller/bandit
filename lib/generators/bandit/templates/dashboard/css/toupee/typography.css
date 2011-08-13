@@ -1,0 +1,103 @@
+/* -------------------------------------------------------------- 
+
+   typography.css
+   * Sets Up A Default Typography.
+   
+-------------------------------------------------------------- */
+
+html { font-size:100.01%; -webkit-font-smoothing: antialiased; }
+body { 
+  font-size: 75%;
+  color: #222; 
+  background: #fff;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+/* HEADINGS
+========================= */
+
+h1,h2,h3,h4,h5,h6 { font-weight: normal; color: #333; word-spacing:-1px; font-family: "Lucida Grande","Lucida Sans Unicode", Arial,Verdana,sans-serif; }
+
+h1             { font-size: 2.5em; font-weight: bold; line-height: 1.2em; margin-bottom: 0.5em; }
+h2             { font-size: 2em; margin-bottom: 0.75em; }
+h3             { font-size: 1.5em; line-height: 1; margin-bottom: .5em; }
+h4             { font-size: 1.2em; line-height: 1.25; margin-bottom: 1.25em; }
+h5             { font-size: 1em; font-weight: bold; margin-bottom: 1.5em; }
+h6             { font-size: 1em; font-weight: bold; }
+
+
+/* TEXT ELEMENTS
+========================= */
+
+p              { margin: 0 0 1em; }
+
+a:focus,
+a:hover        { color: #000; }
+a              { color: #2e71b3; text-decoration: underline; outline-style: none; }
+
+blockquote     { margin: 1.5em; color: #666; font-style: italic; }
+strong         { font-weight: bold; }
+em,dfn         { font-style: italic; }
+dfn            { font-weight: bold; }
+sup, sub       { line-height: 0; }
+
+abbr,
+acronym        { border-bottom: 1px dotted #666; }
+address        { margin: 0 0 1.5em; font-style: italic; }
+del            { color:#666; }
+
+pre            { margin: 1.5em 0; white-space: pre; }
+pre,code,tt    { font: 1em 'andale mono', 'lucida console', monospace; line-height: 1.5; }
+
+
+/* LISTS
+========================= */
+
+li ul,
+li ol       { margin: 0; }
+ul, ol      { margin: 0 1.5em 1.5em 0; padding-left: 1.333em; }
+
+ul          { list-style:square outside none; }
+ol          { list-style-type: decimal; }
+
+dl          { margin: 0 0 1.5em 0; }
+dl dt       { font-weight: bold; }
+dd          { margin-left: 1.5em;}
+
+
+/* TABLES
+========================= */
+
+table                   { width: 100%; background: #fff; }
+table caption           { margin: 0; padding: 8px 10px; text-align: left; border: 1px solid #000; border-bottom: none; background: #fff; }
+table th, table td      { margin: 0; padding: 8px 10px; text-align: center; border-bottom: 1px solid #e1e1e1; }
+table th                { font-size: 14px; font-weight: bold; }
+table th.left           { -moz-border-radius-topleft: 3px;	-webkit-border-top-left-radius: 3px;  border-top-left-radius: 3px; }
+table th.right          { -moz-border-radius-topright: 3px; -webkit-border-top-right-radius: 3px;  border-top-right-radius: 3px;  }
+table .name             { text-align: left; }
+table tr                { background-color: #fff; }
+table tr.last td        { border-bottom: none; }
+table tr.alt            { background-color: #e5ecf9; }
+table td a, 
+table td a:hover        { font-weight: bold; border: none; }
+
+
+/* Misc classes 
+-------------------------------------------------------------- */
+.reset              { margin: 0; padding:0; }
+.right              { float: right; }
+.left               { float: left; }
+.reset              { margin: 0; padding: 0; }
+.small              { font-size: 10px; }
+.large              { font-size: 16px; }
+.hide               { display: none; }
+.quiet              { color: #bbb; }
+.loud               { color: #000; font-weight: bold; }
+.required           { color: #ff0000; }
+.highlight          { background-color:#ff0; padding: 2px 6px; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; }
+.success            { background-color:#060; color: #fff; padding: 2px 6px; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;}
+.error				{ background-color:#fcc; border: 1px solid #f00; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px }
+.pending			{ background-color:#ffc; border: 1px solid yellow; padding: 2px 6px; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; }
+.removed			{ background-color:#900; color: #fff; padding: 2px 6px; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; }
+
+

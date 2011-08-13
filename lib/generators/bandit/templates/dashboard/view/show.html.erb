@@ -1,0 +1,24 @@
+<section class='span-20 colborder'>
+  <div class='title'><h1><%= @experiment.name.to_s.titleize %></h1></div>
+  <p>
+    <%= @experiment.description %>
+  </p>
+
+  <div id="gcontainer"></div>
+
+  <% @experiment.alternatives.each { |alt| %>
+  <h2>Alternative: <%= alt %></h2>
+  <ul>
+    <li>Participants: <%= @experiment.participant_count(alt) %></li>
+    <li>Conversions: <%= @experiment.conversion_count(alt) %></li>
+    <li>Conversion rate: <%= @experiment.conversion_rate(alt) %> %</li>
+  </ul>
+  <% } %>
+
+</section>
+
+<script type="text/javascript">
+var url = "<%= url_for(:controller => 'bandit', :action => 'show', :id => @experiment.name, :format => 'csv') %>";
+var title = "<%= @experiment.name.to_s.titleize %>";
+show_chart(title, url);
+</script>
