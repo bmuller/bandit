@@ -1,7 +1,7 @@
 require File.join File.dirname(__FILE__), 'helper'
 require File.join File.dirname(__FILE__), 'storage_test_base'
 
-class MemCacheStorageTest < Test::Unit::TestCase
+class RedisStorageTest < Test::Unit::TestCase
   include StorageTestBase
   include SetupHelper
 

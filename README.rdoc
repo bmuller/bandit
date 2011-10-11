@@ -1,6 +1,6 @@
 = bandit
 
-Bandit is a multi-armed bandit optmization framework for Rails.
+Bandit is a multi-armed bandit optimization framework for Rails.
 
 = Installation
 First, add the following to your Gemfile in your Rails 3 app:
@@ -42,7 +42,7 @@ You can force a particular alternative by adding a query parameter named "bandit
 will then force the alternative to be "40".
 
 == Controller
-To track a converstion in your controller:
+To track a conversion in your controller:
 
    bandit_convert! :click_test
 
