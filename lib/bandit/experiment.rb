@@ -20,8 +20,8 @@ module Bandit
       @@instances
     end
 
-    def choose(default = nil)
-      if not default.nil? and alternatives.include? default
+    def choose(default=nil)
+      if default && alternatives.include?(default)
         alt = default
       else
         alt = Bandit.player.choose_alternative(self)
