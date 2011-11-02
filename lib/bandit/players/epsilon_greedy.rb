@@ -9,7 +9,7 @@ module Bandit
       if rand <= (1-epsilon)
         best_alternative(experiment)
       else
-        experiment.alternatives.choice
+        experiment.alternatives.sample
       end
     end
 
