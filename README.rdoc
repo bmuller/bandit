@@ -1,6 +1,6 @@
 = bandit
 
-Bandit is a multi-armed bandit optimization framework for Rails.
+Bandit is a multi-armed bandit optimization framework for Rails.  It provides an alternative to A/B testing in Rails.  For background and a comparison with A/B testing, see the document whybandit.rdoc.
 
 = Installation
 First, add the following to your Gemfile in your Rails 3 app:
@@ -65,7 +65,9 @@ To run tests:
 
 To produce fake data for the past week, first create an experiment definition.  Then, run the following rake task:
 
-    rake bandit:populate_data[experiment_name]
+    rake bandit:populate_data[<experiment_name>]
 
-= Reference
-http://untyped.com/untyping/2011/02/11/stop-ab-testing-and-make-out-like-a-bandit
+For instance, to generate a week's worth of fake data for the click_test above:
+
+    rake bandit:populate_data[click_test]
+

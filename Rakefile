@@ -8,6 +8,7 @@ Rake::RDocTask.new("doc") { |rdoc|
   rdoc.rdoc_dir = 'docs'
   rdoc.rdoc_files.include('README.rdoc')
   rdoc.rdoc_files.include('players.rdoc')
+  rdoc.rdoc_files.include('ab_vs_bandit.rdoc')
   rdoc.rdoc_files.include('lib/**/*.rb')
 }
 
