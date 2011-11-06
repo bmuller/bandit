@@ -71,3 +71,5 @@ For instance, to generate a week's worth of fake data for the click_test above:
 
     rake bandit:populate_data[click_test]
 
+= Fault Tolerance
+If the storage mechanism fails, then Bandit will automatically switch to in memory storage.  It will then check every 5 minutes after that to see if the original storage mechanism is back up.  If you have distributed front ends then each front end will continue to optimize (based on the in memory storage), but this optimization will be inefficient compared to shared storage among all front ends.
