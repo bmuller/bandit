@@ -15,6 +15,7 @@ require "bandit/storage/memcache"
 require "bandit/storage/redis"
 
 require "bandit/extensions/controller_concerns"
+require "bandit/extensions/array"
 require "bandit/extensions/view_concerns"
 require "bandit/extensions/time"
 require "bandit/extensions/string"
