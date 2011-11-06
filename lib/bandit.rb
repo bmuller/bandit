@@ -21,6 +21,8 @@ require "bandit/extensions/time"
 require "bandit/extensions/string"
 
 module Bandit
+  @@storage_failure_at = nil
+
   def self.config
     @config ||= Config.new
   end
@@ -33,11 +35,21 @@ module Bandit
   end  
 
   def self.storage
-    @storage ||= BaseStorage.get_storage(Bandit.config.storage.intern, Bandit.config.storage_config)
+    # try using configured storage at least once every 5 minutes until resolved
+    if @@storage_failure_at.nil? or (Time.now.to_i - @@storage_failure_at) > 300
+      @storage ||= BaseStorage.get_storage(Bandit.config.storage.intern, Bandit.config.storage_config)
+    else
+      Rails.logger.warn "storage failure detected #{Time.now.to_i - @@storage_failure_at} seconds ago - using memory storage for 5 minutes"
+      BaseStorage.get_storage(:memory, Bandit.config.storage_config)
+    end
   end
 
   def self.player
     @player ||= BasePlayer.get_player(Bandit.config.player.intern, Bandit.config.player_config)
+  end
+
+  def self.storage_failed!
+    @@storage_failure_at = Time.now.to_i
   end
 
   def self.get_experiment(name)

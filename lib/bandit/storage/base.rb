@@ -120,5 +120,15 @@ module Bandit
     def make_key(parts)
       parts.join(":")
     end
+
+    def with_failure_grace(fail_default=0)
+      begin
+        yield
+      rescue
+        Bandit.storage_failed!
+        Rails.logger.error "Storage method #{self.class} failed.  Falling back to memory storage."
+        fail_default
+      end
+    end
   end
 end

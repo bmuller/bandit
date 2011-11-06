@@ -1,6 +1,6 @@
 = bandit
 
-Bandit is a multi-armed bandit optimization framework for Rails.  It provides an alternative to A/B testing in Rails.  For background and a comparison with A/B testing, see the document whybandit.rdoc.
+Bandit is a multi-armed bandit optimization framework for Rails.  It provides an alternative to A/B testing in Rails.  For background and a comparison with A/B testing, see the whybandit.rdoc document.
 
 = Installation
 First, add the following to your Gemfile in your Rails 3 app:

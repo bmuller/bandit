@@ -1,5 +1,5 @@
 = Bandit Players
-There are a number of different possible players that each seek to explore/exploit using different methods.
+There are a number of different possible players that each seek to explore/exploit using different methods.  Each can be configured in the *bandit.yml* file in the config directory under your *Rails.root*.
 
 == Epsilon Greedy
 The epsilon greedy player selects the best alternative with a probability of 1 - epsilon, and selects uniformly among the other alternatives with a probability of epsilon.  You can set the value of epsilon in the config file like this:
@@ -14,7 +14,6 @@ The epsilon greedy player selects the best alternative with a probability of 1 -
 
 == Round Robin
 This is included for testing purposes only.  It will not optimize.  There are no config options.
-
 
     production:
       ...
