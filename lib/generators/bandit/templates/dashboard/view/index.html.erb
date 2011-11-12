@@ -9,13 +9,6 @@
   <p>
     <%= experiment.description %>
   </p>
-  <% experiment.alternatives.each { |alt| %>
-    <h3>Alternative: <%= alt %></h3>
-    <ul>
-      <li>Participants: <%= experiment.participant_count(alt) %></li>
-      <li>Conversions: <%= experiment.conversion_count(alt) %></li>
-      <li>Conversion rate: <%= experiment.conversion_rate(alt) %> %</li>
-    </ul>
-  <% } %>
+  <%= render :partial => 'experiment_table', :locals => { :experiment => experiment } %>
 <% } %>
 </section>

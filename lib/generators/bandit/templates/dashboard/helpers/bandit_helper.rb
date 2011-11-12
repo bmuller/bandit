@@ -3,6 +3,10 @@ module BanditHelper
     Bandit.config.storage.titleize
   end
 
+  def round_percent(percent)
+    (percent * 100).round / 100.0
+  end
+
   def player_name
     Bandit.config.player.titleize
   end

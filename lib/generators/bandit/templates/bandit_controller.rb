@@ -17,7 +17,9 @@ class BanditController < ApplicationController
   def experiment_csv(experiment)
     rows = []
     experiment.alternatives.each { |alt|
-      experiment.alternative_start(alt).date.upto(Date.today) { |d|
+      start = experiment.alternative_start(alt)
+      next if start.nil?
+      start.date.upto(Date.today) { |d|
         pcount = Bandit::DateHour.date_inject(d, 0) { |sum,dh| sum + experiment.participant_count(alt, dh) }
         ccount = Bandit::DateHour.date_inject(d, 0) { |sum,dh| sum + experiment.conversion_count(alt, dh) }
         rows << [ alt, d.year, d.month, d.day, pcount, ccount ].join("\t")

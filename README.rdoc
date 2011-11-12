@@ -35,7 +35,7 @@ For instance, in a link:
 
     <%= link_to "new purchase", new_purchase_path, :style => "font-size: #{bandit_choose(:click_test)}px;" %>
 
-You can force a particular alternative by adding a query parameter named "bandit_<expname>" and setting it's value to the alternative you want.  For instance, given the above experiment in the configuration example:
+You can force a particular alternative by adding a query parameter named "bandit_<experiment name>" and setting it's value to the alternative you want.  For instance, given the above experiment in the configuration example:
 
     http://<yourhost>/<path>?bandit_click_test=40
 
@@ -52,7 +52,7 @@ To track a conversion in your controller:
 
 Then, add the following to your config/routes.rb file:
 
-    match 'bandit' => 'bandit#index'
+    resources :bandit
 
 To see a dashboard with relevant information, go to:
 
@@ -61,7 +61,9 @@ To see a dashboard with relevant information, go to:
 = Tests
 To run tests:
 
-    rake test
+    rake test_memory
+    rake test_memcache
+    rake test_redis
 
 To produce fake data for the past week, first create an experiment definition.  Then, run the following rake task:
 
