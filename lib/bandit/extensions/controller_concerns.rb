@@ -18,6 +18,16 @@ module Bandit
           cookies.delete(cookiename)
         end
       end
+
+      def bandit_choose(exp)
+        name = "bandit_#{exp}".intern
+
+        # choose url param with preference
+        value = params[name].nil? ? cookies.signed[name] : params[name]
+
+        # choose with default, and set cookie
+        cookies.signed[name] = Bandit.get_experiment(exp).choose(value)
+      end
     end
 
   end

@@ -46,6 +46,11 @@ To track a conversion in your controller:
 
    bandit_convert! :click_test
 
+You can also request a choice in the conroller:
+
+   redirect_to bandit_choose(:some_url_test)
+
+
 = Dashboard
 
     rails generate bandit:dashboard
