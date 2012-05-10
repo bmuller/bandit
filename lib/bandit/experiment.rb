@@ -25,8 +25,8 @@ module Bandit
         alt = default
       else
         alt = Bandit.player.choose_alternative(self)
+        @storage.incr_participants(self, alt)
       end
-      @storage.incr_participants(self, alt)
       alt
     end
 

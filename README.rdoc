@@ -63,6 +63,21 @@ To see a dashboard with relevant information, go to:
 
     http://<yourhost>/bandit
 
+= User Tracking
+There are a few different ways that users/conversions can be tracked.  Instead of calling bandit_choose and bandit_convert! in your code, you may alternatively use one of the following method combinations:
+
+    bandit_simple_choose/bandit_simple_convert!   (no cookies involved, same as raw impressions)
+    bandit_session_choose/bandit_session_convert! (session cookie, same as bandit_choose with a fix)
+    bandit_sticky_choose/bandit_sticky_convert!   (persistent cookies)
+
+bandit_sticky_convert! creates a _converted cookie which stops additional conversions from being counted. For example, if you are collecting email addresses, a user may enter their email address more than once, but you may want to count all these attempts as one conversion.
+
+You may also use the bandit_sticky_choose/bandit_session_convert! combination if you wish to use persistent cookies but allow each user to convert multiple times. This way visitors are always presented with the same alternative until they convert, at which point they are presented with another and so on.
+
+Finally, if you use bandit_simple_convert!, please remember the second argument (alternative) is not optional, as we have no cookie to read from.
+
+The default bandit_choose/bandit_convert methods use the session based choose/convert.
+
 = Tests
 To run tests:
 
