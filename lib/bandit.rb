@@ -13,6 +13,7 @@ require "bandit/storage/base"
 require "bandit/storage/memory"
 require "bandit/storage/memcache"
 require "bandit/storage/redis"
+require "bandit/storage/dalli"
 
 require "bandit/extensions/controller_concerns"
 require "bandit/extensions/array"
@@ -32,7 +33,7 @@ module Bandit
     config.check!
     # intern keys in storage config
     config.storage_config = config.storage_config.inject({}) { |n,o| n[o.first.intern] = o.last; n }
-  end  
+  end
 
   def self.storage
     # try using configured storage at least once every 5 minutes until resolved
@@ -53,7 +54,7 @@ module Bandit
   end
 
   def self.get_experiment(name)
-    exp = Experiment.instances.select { |e| e.name == name } 
+    exp = Experiment.instances.select { |e| e.name == name }
     exp.length > 0 ? exp.first : nil
   end
 

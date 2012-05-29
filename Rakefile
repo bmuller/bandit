@@ -26,6 +26,13 @@ Rake::TestTask.new("test_memcache") { |t|
   t.verbose = true
 }
 
+desc "Run all unit tests with dalli storage"
+Rake::TestTask.new("test_dalli") { |t|
+  t.libs << "lib"
+  t.test_files = FileList['test/dalli_*.rb']
+  t.verbose = true
+}
+
 desc "Run all unit tests with redis storage"
 Rake::TestTask.new("test_redis") { |t|
   t.libs << "lib"

@@ -17,9 +17,10 @@ module Bandit
     def self.get_storage(name, config)
       config ||= {}
 
-      case name 
+      case name
       when :memory then MemoryStorage.new(config)
       when :memcache then MemCacheStorage.new(config)
+      when :dalli then DalliStorage.new(config)
       when :redis then RedisStorage.new(config)
       else raise UnknownStorageEngineError, "#{name} not a known storage method"
       end
@@ -50,17 +51,17 @@ module Bandit
       raise NotImplementedError
     end
 
-    def incr_participants(experiment, alternative, count=1, date_hour=nil)      
+    def incr_participants(experiment, alternative, count=1, date_hour=nil)
       date_hour ||= DateHour.now
 
       # initialize first start time for alternative if we haven't inited yet
       init alt_started_key(experiment, alternative), date_hour.to_i
-      
+
       # increment total count and per hour count
       incr part_key(experiment, alternative), count
       incr part_key(experiment, alternative, date_hour), count
     end
-    
+
     def incr_conversions(experiment, alternative, count=1, date_hour=nil)
       # increment total count and per hour count
       incr conv_key(experiment, alternative), count
@@ -78,7 +79,7 @@ module Bandit
     def conversion_count(experiment, alternative, date_hour=nil)
       get conv_key(experiment, alternative, date_hour)
     end
-    
+
     def player_state_set(experiment, player, name, value)
       set player_state_key(experiment, player, name), value
     end
@@ -91,7 +92,7 @@ module Bandit
       secs = get alt_started_key(experiment, alternative), nil
       secs.nil? ? nil : Time.at(secs).to_date_hour
     end
-    
+
     # if date_hour is nil, create key for total
     # otherwise, create key for hourly based
     def part_key(exp, alt, date_hour=nil)
