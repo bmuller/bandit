@@ -12,7 +12,7 @@ Then, run the following:
     bundle install
     rails generate bandit:install
 
-You can then edit the bandit.yml file in your config directory to set your storage and player parameters.  Redis, memcache, and memory storage options are available (you will need to add either the memcache or redis gem to your Gemfile).  Memory storage should only be used for testing.
+You can then edit the bandit.yml file in your config directory to set your storage and player parameters.  Redis, memcache, dalli, and memory storage options are available (you will need to add either the memcache-client, redis, or dalli gem to your Gemfile).  Memory storage should only be used for testing.
 
 See the file players.rdoc for information about available players.
 
@@ -84,6 +84,7 @@ To run tests:
     rake test_memory
     rake test_memcache
     rake test_redis
+    rake test_dalli
 
 To produce fake data for the past week, first create an experiment definition.  Then, run the following rake task:
 
