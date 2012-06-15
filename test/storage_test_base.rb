@@ -18,7 +18,7 @@ module StorageTestBase
 
     assert_equal @storage.alternative_start_time(exp, alt), start
 
-    future = Bandit::DateHour.new(Date.today, Time.now.hour+3)
+    future = Bandit::DateHour.new(Date.today+1, Time.now.hour)
     @storage.incr_participants(exp, alt, 123, future)
     assert_equal @storage.participant_count(exp, alt, future), 123
 
@@ -35,7 +35,7 @@ module StorageTestBase
     assert_equal @storage.conversion_count(exp, alt), 3
     assert_equal @storage.conversion_count(exp, alt, Bandit::DateHour.now), 3
 
-    future = Bandit::DateHour.new(Date.today, Time.now.hour+3)
+    future = Bandit::DateHour.new(Date.today+1, Time.now.hour)
     @storage.incr_conversions(exp, alt, 123, future)
     assert_equal @storage.conversion_count(exp, alt, future), 123
 
