@@ -1,6 +1,9 @@
 = Bandit Players
 There are a number of different possible players that each seek to explore/exploit using different methods.  Each can be configured in the *bandit.yml* file in the config directory under your *Rails.root*.
 
+== UCB
+The UCB player calculates the best alternative based on the sum of its conversion rate and its calculated confidence interval. The player will automatically shift between an experimental phase and a non-experimental phase based on its confidence that it has found the optimal strategy. See the following blog post for more details: http://www.chrisstucchio.com/blog/2012/bandit_algorithms_vs_ab.html
+
 == Epsilon Greedy
 The epsilon greedy player selects the best alternative with a probability of 1 - epsilon, and selects uniformly among the other alternatives with a probability of epsilon.  You can set the value of epsilon in the config file like this:
 

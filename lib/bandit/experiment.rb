@@ -50,6 +50,10 @@ module Bandit
       @storage.participant_count(self, alt, date_hour)
     end
 
+    def total_participant_count(date_hour=nil)
+      @storage.total_participant_count(self, date_hour)
+    end
+
     def conversion_rate(alt)
       pcount = participant_count(alt)
       ccount = conversion_count(alt)

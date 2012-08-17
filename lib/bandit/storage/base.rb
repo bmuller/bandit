@@ -68,6 +68,12 @@ module Bandit
       incr conv_key(experiment, alternative, date_hour || DateHour.now), count
     end
 
+    def total_participant_count(experiment, date_hour=nil)
+      experiment.alternatives.inject(0) do |tpc, alternative|
+        tpc + participant_count(experiment, alternative, date_hour)
+      end
+    end
+
     # if date_hour isn't specified, get total count
     # if date_hour is specified, return count for DateHour
     def participant_count(experiment, alternative, date_hour=nil)
