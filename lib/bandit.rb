@@ -65,6 +65,7 @@ end
 
 require 'action_controller'
 ActionController::Base.send :include, Bandit::ControllerConcerns
+ActionController::Base.send :include, Bandit::ViewConcerns
 
 require 'action_view'
 ActionView::Base.send :include, Bandit::ViewConcerns
