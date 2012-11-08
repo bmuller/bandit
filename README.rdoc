@@ -46,7 +46,7 @@ To track a conversion in your controller:
 
    bandit_convert! :click_test
 
-You can also request a choice in the conroller:
+You can also request a choice in the controller:
 
    redirect_to bandit_choose(:some_url_test)
 
@@ -67,7 +67,7 @@ To see a dashboard with relevant information, go to:
 There are a few different ways that users/conversions can be tracked.  Instead of calling bandit_choose and bandit_convert! in your code, you may alternatively use one of the following method combinations:
 
     bandit_simple_choose/bandit_simple_convert!   (no cookies involved, same as raw impressions)
-    bandit_session_choose/bandit_session_convert! (session cookie, same as bandit_choose with a fix)
+    bandit_session_choose/bandit_session_convert! (session cookie, same as bandit_choose)
     bandit_sticky_choose/bandit_sticky_convert!   (persistent cookies)
 
 bandit_sticky_convert! creates a _converted cookie which stops additional conversions from being counted. For example, if you are collecting email addresses, a user may enter their email address more than once, but you may want to count all these attempts as one conversion.
