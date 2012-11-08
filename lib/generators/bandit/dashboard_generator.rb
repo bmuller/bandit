@@ -16,8 +16,8 @@ module Bandit
       end
 
       def copy_assets
-        directory 'dashboard/js', 'public/javascripts/bandit'
-        directory 'dashboard/css', 'public/stylesheets/bandit'
+        directory 'dashboard/js', 'vendor/javascripts/bandit'
+        directory 'dashboard/css', 'vendor/stylesheets/bandit'
       end
 
       def message

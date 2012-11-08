@@ -5,7 +5,7 @@ Gem::Specification.new do |s|
   s.name        = "bandit"
   s.version     = Bandit::VERSION
   s.authors     = ["Brian Muller"]
-  s.email       = ["brian.muller@livingsocial.com"]
+  s.email       = ["bamuller@gmail.com"]
   s.homepage    = "https://github.com/bmuller/bandit"
   s.summary     = "Multi-armed bandit testing in rails"
   s.description = "Bandit provides a way to do multi-armed bandit optimization of alternatives in a rails website"
