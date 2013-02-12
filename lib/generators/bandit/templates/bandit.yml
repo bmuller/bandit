@@ -14,3 +14,12 @@ production:
   storage_config:
     host: localhost
     port: 6379
+
+# To use a Redis instance via URL (e.g. RedisToGo)
+# production: 
+#   player: epsilon_greedy
+#   player_config:
+#     epsilon: 0.1
+#   storage: redis
+#   storage_config:
+#     url: redis://redistogo:abcdef012345@somewhere.redistogo.com:10020

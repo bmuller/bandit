@@ -2,9 +2,18 @@ module Bandit
   class RedisStorage < BaseStorage
     def initialize(config)
       require 'redis'
-      config[:host] ||= 'localhost'
-      config[:port] ||= 6379
+
+      if config[:url]
+        uri = URI.parse(config[:url])
+        config[:host] = uri.host
+        config[:port] = uri.port
+        config[:password] = uri.password
+      else
+        config[:host] ||= 'localhost'
+        config[:port] ||= 6379
+      end
       config[:db] ||= "bandit"
+
       @redis = Redis.new config
     end
 
