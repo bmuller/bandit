@@ -6,6 +6,7 @@ module Bandit
       case name 
       when :round_robin then RoundRobinPlayer.new(config)
       when :epsilon_greedy then EpsilonGreedyPlayer.new(config)
+      when :softmax then SoftmaxPlayer.new(config)
       else raise UnknownPlayerEngineError, "#{name} not a known player type"
       end
     end

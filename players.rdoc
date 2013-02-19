@@ -11,6 +11,15 @@ The epsilon greedy player selects the best alternative with a probability of 1 -
         epsilon: 0.1
       ...
 
+== Softmax
+The softmax player selects an an alternative with a probability based on its past success compared to the other alternatives.  The temperature determines how likely the player is to explore less successful alternatives.
+
+    production:
+      ...
+      player: softmax
+      player_config:
+        temperature: 0.2
+      ...
 
 == Round Robin
 This is included for testing purposes only.  It will not optimize.  There are no config options.
