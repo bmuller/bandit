@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+  <head>
+  <title>Bandit Dashboard</title>
+  <%= stylesheet_link_tag "bandit/application.css" %>
+  <%= javascript_include_tag "bandit/application.js" %>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="span-10 brand">
+          <h1><%= link_to "Bandit Dashboard", root_path %></h1>
+        </div>
+        <nav class="span-14 last">
+          <ul>
+            <li><%= link_to "index", root_path %></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="container">
+      <%= yield %>
+      <aside class="span-3 last">
+        <section class="mod">
+          <header>
+            <h2>Experiments</h2>
+          </header>
+          <article>
+            <ul>
+              <% Bandit.experiments.each do |experiment| %>
+                <li><%= link_to experiment.name.to_s.titleize, bandit_path(experiment.name) %></li>
+              <% end %>
+            </ul>
+          </article>
+        </section>
+      </aside>
+    </div>
+    <footer>
+    </footer>
+  </body>
+</html>

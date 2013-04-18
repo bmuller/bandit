@@ -1,0 +1,19 @@
+  <table cellspacing="0">
+    <tbody>
+      <tr>
+        <th scope="col" class="name">Alternative</th>
+        <th scope="col">Participants</th>
+        <th scope="col">Conversions</th>
+        <th scope="col">Conversion Rate</th>
+      </tr>
+
+      <% experiment.alternatives.each do |alt| %>
+      <tr class="<%= cycle('even', 'alt') %>">
+        <td class="name"><%= alt %></td>
+        <td><%= experiment.participant_count(alt) %></td>
+        <td><%= experiment.conversion_count(alt) %></td>
+        <td><%= round_percent experiment.conversion_rate(alt) %> %</td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>

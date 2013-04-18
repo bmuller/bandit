@@ -1,0 +1,15 @@
+<section class="span-20 colborder">
+  <div class="title"><h1><%= @experiment.name.to_s.titleize %></h1></div>
+  <p><%= @experiment.description %></p>
+
+  <%= render :partial => 'experiment_table', :locals => { :experiment => @experiment } %>
+
+  <div id="totals_gcontainer" class="graph"></div>
+  <div id="percents_gcontainer" class="graph"></div>
+</section>
+
+<script>
+  var url = "<%= bandit_path(@experiment.name, :format => :csv) %>";
+  var title = "<%= @experiment.name.to_s.titleize %>";
+  show_chart(title, url);
+</script>
