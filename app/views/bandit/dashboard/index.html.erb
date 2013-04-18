@@ -1,0 +1,14 @@
+<section class="span-20 colborder">
+  <div class="title"><h1>Status</h1></div>
+  <p>
+    Using <%= storage_name %> storage <%= storage_config %> and a <%= player_name %> player <%= player_config %> for <%= @experiments.length %> active experiment(s).
+  </p>
+  <div class="title"><h1>Running Experiments</h1></div>
+  <% @experiments.each do |experiment| %>
+  <h2><%= link_to experiment.name.to_s.titleize,  bandit_path(experiment.name) %></h2>
+  <p>
+    <%= experiment.description %>
+  </p>
+  <%= render :partial => 'experiment_table', :locals => { :experiment => experiment } %>
+  <% end %>
+</section>

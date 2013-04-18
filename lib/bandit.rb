@@ -23,6 +23,8 @@ require "bandit/extensions/view_concerns"
 require "bandit/extensions/time"
 require "bandit/extensions/string"
 
+require "bandit/engine"
+
 module Bandit
   @@storage_failure_at = nil
 
