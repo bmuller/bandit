@@ -3,7 +3,8 @@ module Bandit
     def initialize(config)
       require 'dalli'
       config[:namespace] ||= 'bandit'
-      @dalli = Dalli::Client.new(config.fetch(:host, 'localhost:11211'), config)
+      server = "#{config[:host]}:#{config.fetch([:port], 11211)}" if config[:host]
+      @dalli = Dalli::Client.new(server, config)
     end
 
     # increment key by count
