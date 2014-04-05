@@ -41,3 +41,17 @@ Rake::TestTask.new("test_redis") { |t|
   t.test_files = FileList['test/redis_*.rb']
   t.verbose = true
 }
+
+desc "Run all unit tests with pstore storage"
+Rake::TestTask.new("test_pstore") { |t|
+  t.libs << "lib"
+  t.test_files = FileList['test/pstore_*.rb']
+  t.verbose = true
+}
+
+desc "Run all unit tests with yamlstore storage"
+Rake::TestTask.new("test_yamlstore") { |t|
+  t.libs << "lib"
+  t.test_files = FileList['test/yamlstore_*.rb']
+  t.verbose = true
+}

@@ -22,6 +22,7 @@ module Bandit
       when :memcache then MemCacheStorage.new(config)
       when :dalli then DalliStorage.new(config)
       when :redis then RedisStorage.new(config)
+      when :pstore then PstoreStorage.new(config)
       else raise UnknownStorageEngineError, "#{name} not a known storage method"
       end
     end
