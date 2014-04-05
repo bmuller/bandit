@@ -4,4 +4,10 @@ redis_storage_config:
 
 memcache_storage_config:
   host: localhost
-  
+
+pstore_storage_config:
+  file: "pstore_test.pstore"
+
+yamlstore_storage_config:
+  use_yaml_store: true
+  file: "yamlstore_test.yamlstore"

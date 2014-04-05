@@ -16,6 +16,7 @@ require "bandit/storage/memory"
 require "bandit/storage/memcache"
 require "bandit/storage/redis"
 require "bandit/storage/dalli"
+require "bandit/storage/pstore"
 
 require "bandit/extensions/controller_concerns"
 require "bandit/extensions/array"
